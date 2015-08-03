@@ -1,0 +1,65 @@
+//
+// Carousel
+// -----------------------------------------------------------------------------
+
+$carousel-items:            5;
+$carousel-item-space:       5%;
+
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+
+    & > input {
+        display: none;
+
+        @for $i from 1 through $carousel-items {
+            &:nth-child(#{$i}) {
+                &:checked {
+                    ~ .carousel-items {
+                        @if $i > 1 {
+                            margin-left: -(($i - 1) * 100%);
+                        }
+
+                        > .carousel-item:first-child {
+                            margin-right: ($carousel-item-space / 2) + ($carousel-item-space * ($carousel-items - $i));
+                        }
+                        > .carousel-item:nth-child(#{($carousel-items + 1) - $i}) > label {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-items {
+        margin-left: 0;
+        transition: margin .4s;
+        width: ($carousel-items * 100%);
+    }
+    &-item {
+        float: right;
+        position: relative;
+        transition: margin .4s;
+        width: (100% / $carousel-items) - $carousel-item-space;
+
+        > label {
+            top: 0;
+            right: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+            // TEST
+            cursor: pointer;
+        }
+
+        // TEST
+        height: 50px;
+        &:nth-child(1) { background-color: red; }
+        &:nth-child(2) { background-color: blue; }
+        &:nth-child(3) { background-color: green; }
+        &:nth-child(4) { background-color: yellow; }
+        &:nth-child(5) { background-color: darkred; }
+    }
+}

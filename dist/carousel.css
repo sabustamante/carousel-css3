@@ -1,0 +1,60 @@
+.carousel {
+  overflow: hidden;
+  position: relative; }
+  .carousel > input {
+    display: none; }
+    .carousel > input:nth-child(1):checked ~ .carousel-items > .carousel-item:first-child {
+      margin-right: 22.5%; }
+    .carousel > input:nth-child(1):checked ~ .carousel-items > .carousel-item:nth-child(5) > label {
+      display: none; }
+    .carousel > input:nth-child(2):checked ~ .carousel-items {
+      margin-left: -100%; }
+      .carousel > input:nth-child(2):checked ~ .carousel-items > .carousel-item:first-child {
+        margin-right: 17.5%; }
+      .carousel > input:nth-child(2):checked ~ .carousel-items > .carousel-item:nth-child(4) > label {
+        display: none; }
+    .carousel > input:nth-child(3):checked ~ .carousel-items {
+      margin-left: -200%; }
+      .carousel > input:nth-child(3):checked ~ .carousel-items > .carousel-item:first-child {
+        margin-right: 12.5%; }
+      .carousel > input:nth-child(3):checked ~ .carousel-items > .carousel-item:nth-child(3) > label {
+        display: none; }
+    .carousel > input:nth-child(4):checked ~ .carousel-items {
+      margin-left: -300%; }
+      .carousel > input:nth-child(4):checked ~ .carousel-items > .carousel-item:first-child {
+        margin-right: 7.5%; }
+      .carousel > input:nth-child(4):checked ~ .carousel-items > .carousel-item:nth-child(2) > label {
+        display: none; }
+    .carousel > input:nth-child(5):checked ~ .carousel-items {
+      margin-left: -400%; }
+      .carousel > input:nth-child(5):checked ~ .carousel-items > .carousel-item:first-child {
+        margin-right: 2.5%; }
+      .carousel > input:nth-child(5):checked ~ .carousel-items > .carousel-item:nth-child(1) > label {
+        display: none; }
+  .carousel-items {
+    margin-left: 0;
+    transition: margin 0.4s;
+    width: 500%; }
+  .carousel-item {
+    float: right;
+    position: relative;
+    transition: margin 0.4s;
+    width: 15%;
+    height: 50px; }
+    .carousel-item > label {
+      top: 0;
+      right: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      cursor: pointer; }
+    .carousel-item:nth-child(1) {
+      background-color: red; }
+    .carousel-item:nth-child(2) {
+      background-color: blue; }
+    .carousel-item:nth-child(3) {
+      background-color: green; }
+    .carousel-item:nth-child(4) {
+      background-color: yellow; }
+    .carousel-item:nth-child(5) {
+      background-color: darkred; }

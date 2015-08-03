@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Carousel with only CSS3
+        link(rel='stylesheet', href='./carousel.css')
+    body
+        - var items = 5;
+
+        .carousel
+            //- // Labels
+            //- each i in [1, 2, 3]
+            //-     label(for="item-" + i)
+
+            // Inputs
+            - for (var i = 1; i <= items; ++i) {
+                if i == items
+                    input(id="item-" + i, name="item", type="radio", checked)
+                else
+                    input(id="item-" + i, name="item", type="radio")
+            - }
+
+            // Items
+            .carousel-items
+                - for (var i = 1; i <= items; ++i) {
+                    .carousel-item
+                        label(for="item-" + ((items + 1) - i))
+                - }
